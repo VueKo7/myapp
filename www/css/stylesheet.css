@@ -1,0 +1,118 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    user-select: all;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /*prevent copy paste, to allow, change 'none' to 'text'*/ 
+    background-image:linear-gradient(to bottom, #7af9fd 0%, #31adff 51%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    height:100%;
+    width:100%;
+    border: 0px;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
+
+div.nArduino {
+    background-image:linear-gradient(to bottom, #ffffffb0 0%, #ffffffbb 51%);
+    border-radius: 30px;
+    margin: 5px;
+    padding: 5px;
+}
+
+h1.name {
+    font-size: 30px;
+    color: rgb(120, 156, 255);
+    text-decoration: overline;
+    text-align: center;
+}
+table.specs {
+    color: black;
+    font-size: 25px;
+    margin-left: 15%;
+}
+td.dato {
+    text-align: center;
+    padding: 3px;
+}
+td.tipo {
+    text-align: left;
+    padding: 3px;
+}
+
+h1.title {
+    font-size: 40px;
+    color:rgb(46, 102, 255);
+    text-align: center;
+    font-family: Verdana;
+    background-color: aquamarine;
+    border-radius: 30px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+a.link {
+    text-decoration: none;
+}
+a.link:active {
+    text-decoration: underline;
+}
+
+iframe {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 600px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+div.menu {
+    font-size: 30px;
+    text-align: center;
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-attachment: scroll;
+}
+
+a.linkMenu {
+    margin-left: 10px; 
+    margin-right: 10px; 
+    color: antiquewhite;
+}
+a.linkMenu:link {
+    text-decoration: none;
+}
