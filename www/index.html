@@ -19,11 +19,9 @@
 -->
 <html>
     <head>
-        <script src="cordova.js"></script>
         <script src="js/index.js"></script>
 
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.google.com;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -32,7 +30,7 @@
         <title>Oggi Pioggia</title>
     </head>
 
-    <body onload="readMeteoData()">
+    <body onload="meteoPV();">
         <div>
             <h1 class="title"><i>MeteOra!</i></h1>
         </div>
@@ -40,37 +38,14 @@
             <div class="nArduino">
                 <h1 class="name">Arduino N1</h1>
                 <table class="specs">
-                    <tr><td class="tipo">Luogo: </td><td class="dato"><b>Prevalle</b></td></tr>
-                    <tr><td class="tipo">Temperatura: </td><td class="dato">15</td></tr>
-                    <tr><td class="tipo">Pressione: </td><td class="dato">50</td></tr>
-                    <tr><td class="tipo">Umidità: </td><td class="dato">7%</td></tr>
+                    <tr><td class="tipo">Luogo: </td><td id="pv"><b>Prevalle</b></td></tr>
+                    <tr><td class="tipo">Temperatura: </td><td id="temp_pv"></td></tr>
+                    <tr><td class="tipo">Temperatura Percepita: </td><td id="tempPercepita_pv"></td></tr>
+                    <tr><td class="tipo">Pressione: </td><td id="pressione_pv"></td></tr>
+                    <tr><td class="tipo">Umidità: </td><td id="humidity_pv"></td></tr>
                 </table>
             </div>
-            <br>
-            <div class="nArduino">
-                <h1 class="name">Arduino N1</h1>
-                <table class="specs">
-                    <tr><td class="tipo">Luogo: </td><td class="dato"><b>Prevalle</b></td></tr>
-                    <tr><td class="tipo">Temperatura: </td><td class="dato">15</td></tr>
-                    <tr><td class="tipo">Pressione: </td><td class="dato">50</td></tr>
-                    <tr><td class="tipo">Umidità: </td><td class="dato">7%</td></tr>
-                </table>
-            </div>
-            <br>
-            <div class="nArduino">
-                <h1 class="name">Arduino N1</h1>
-                <table class="specs">
-                    <tr><td class="tipo" class="link">Luogo: </td><td class="dato"><b>Prevalle</b></td></tr>
-                    <tr><td class="tipo">Temperatura: </td><td class="dato">15</td></tr>
-                    <tr><td class="tipo">Pressione: </td><td class="dato">50</td></tr>
-                    <tr><td class="tipo">Umidità: </td><td class="dato">7%</td></tr>
-                </table>
-            </div>
-            <div class="menu">
-                <a href="resources/crediti.html" class="linkMenu">Crediti</a>
-                <a href="index.html" class="linkMenu">Home</a>
-                <a href="resources/map.html" class="linkMenu">Mappa</a>
-            </div>
+            
         </div>
     </body>
 </html>

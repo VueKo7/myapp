@@ -30,25 +30,18 @@ function onDeviceReady() {
 }
 
 
-function fetchJSONData() {
+async function meteoPV() {
     
-    fetch("../meteoItaly.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) => 
-              console.log(data))
-        .catch((error) => 
-               console.error("Unable to fetch data:", error));
+    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=45.546253944571085&longitude=10.414666881415998&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,surface_pressure&timezone=GMT");
+    const JSON_obj = await response.json();
+
+    
+    document.getElementById("temp_pv").innerHTML = JSON_obj["current"]["temperature_2m"];
+    document.getElementById("tempPercepita_pv").innerHTML = JSON_obj["current"]["apparent_temperature"];
+    document.getElementById("humidity_pv").innerHTML = JSON_obj["current"]["relative_humidity_2m"];
+    document.getElementById("pressione_pv").innerHTML = JSON_obj["current"]["surface_pressure"];
 }
 
 
-function meteoData() {
 
-
-}
   
