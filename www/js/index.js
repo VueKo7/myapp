@@ -32,15 +32,17 @@ function onDeviceReady() {
 
 async function meteoPV() {
     
-    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=45.546253944571085&longitude=10.414666881415998&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,surface_pressure&timezone=GMT");
+    const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=42.8333&longitude=12.8333&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,precipitation_probability_max&timezone=auto");
     const JSON_obj = await response.json();
 
     
-    document.getElementById("temp_pv").innerHTML = JSON_obj["current"]["temperature_2m"];
-    document.getElementById("tempPercepita_pv").innerHTML = JSON_obj["current"]["apparent_temperature"];
-    document.getElementById("humidity_pv").innerHTML = JSON_obj["current"]["relative_humidity_2m"];
-    document.getElementById("pressione_pv").innerHTML = JSON_obj["current"]["surface_pressure"];
+    document.getElementById("temp_pv").innerHTML = JSON_obj["current"]["temperature_2m"] + JSON_obj["current_units"]["temperature_2m"];
+    document.getElementById("tempPercepita_pv").innerHTML = JSON_obj["current"]["apparent_temperature"] + JSON_obj["current_units"]["temperature_2m"];
+    document.getElementById("humidity_pv").innerHTML = JSON_obj["current"]["relative_humidity_2m"] + JSON_obj["current_units"]["relative_humidity_2m"];
+    document.getElementById("pressione_pv").innerHTML = JSON_obj["current"]["surface_pressure"] + JSON_obj["current_units"]["surface_pressure"];
+
 }
+
 
 
 
